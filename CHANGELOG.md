@@ -7,6 +7,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Roadmap
 
+## [0.0.2] - 2021-10-01
+
+### Added
+
+- More tests.
+
+### Changed
+
+- Improved validation for `min` and `max`.
+- Fixed `Generate` panic in case of `rand.Int` failure.
+
 ## [0.0.1] - 2021-09-24
 
 ### Checklist

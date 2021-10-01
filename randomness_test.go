@@ -22,7 +22,62 @@ func Test_randomPortGenerator(t *testing.T) {
 		excludePorts bool
 	}{
 		{
-			name: "Should work - range 0",
+			name: "Should fail - min is less than 1",
+			args: args{
+				min: 0,
+				max: 10,
+			},
+			times:        3,
+			wantErr:      true,
+			maxRetry:     false,
+			excludePorts: false,
+		},
+		{
+			name: "Should fail - min is negative",
+			args: args{
+				min: -10,
+				max: 10,
+			},
+			times:        3,
+			wantErr:      true,
+			maxRetry:     false,
+			excludePorts: false,
+		},
+		{
+			name: "Should fail - max less than 0 and is negative",
+			args: args{
+				min: 1,
+				max: -10,
+			},
+			times:        3,
+			wantErr:      true,
+			maxRetry:     false,
+			excludePorts: false,
+		},
+		{
+			name: "Should fail - max less than min",
+			args: args{
+				min: 3,
+				max: 1,
+			},
+			times:        3,
+			wantErr:      true,
+			maxRetry:     false,
+			excludePorts: false,
+		},
+		{
+			name: "Should work - max is max int capacity",
+			args: args{
+				min: 1,
+				max: 0,
+			},
+			times:        3,
+			wantErr:      false,
+			maxRetry:     false,
+			excludePorts: false,
+		},
+		{
+			name: "Should work - no range",
 			args: args{
 				min: 1,
 				max: 1,
@@ -40,17 +95,6 @@ func Test_randomPortGenerator(t *testing.T) {
 			},
 			times:        3,
 			wantErr:      false,
-			maxRetry:     false,
-			excludePorts: false,
-		},
-		{
-			name: "Should fail - max less than min",
-			args: args{
-				min: 1,
-				max: 0,
-			},
-			times:        3,
-			wantErr:      true,
 			maxRetry:     false,
 			excludePorts: false,
 		},

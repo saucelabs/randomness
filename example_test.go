@@ -12,7 +12,7 @@ import (
 
 // Demonstrates how to generate a random number (integer).
 func ExampleNew_generate() {
-	r, err := New(0, 5, 0, false)
+	r, err := New(1, 5, 0, false)
 	if err != nil {
 		log.Fatalln(err)
 	}
@@ -22,7 +22,7 @@ func ExampleNew_generate() {
 		log.Fatalln(err)
 	}
 
-	fmt.Println(n < 0 && n > 5)
+	fmt.Println(n < 1 && n > 5)
 
 	// output:
 	// false
@@ -130,14 +130,22 @@ func ExampleNew_generate_collisionFreeMaxRetry() {
 
 // Demonstrates how to generate a random number (integer).
 func ExampleNew_mustGenerate() {
-	r, err := New(0, 5, 0, false)
+	r, err := New(18000, 50000, 0, false)
 	if err != nil {
 		log.Fatalln(err)
 	}
 
-	n := r.MustGenerate()
+	control := false
 
-	fmt.Println(n < 0 && n > 5)
+	for i := 0; i < 100000; i++ {
+		n := r.MustGenerate()
+
+		if (n < 18000 && n > 50000) == true {
+			control = true
+		}
+	}
+
+	fmt.Println(control)
 
 	// output:
 	// false

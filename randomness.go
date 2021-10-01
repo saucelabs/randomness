@@ -6,7 +6,6 @@ package randomness
 
 import (
 	"crypto/rand"
-	"fmt"
 	"log"
 	"math"
 	"math/big"
@@ -21,10 +20,12 @@ import (
 var l = sypl.NewDefault("randomgenerator", level.Info)
 
 var (
+	ErrFailedToGenerateRandomness      = customerror.NewFailedToError("to generate randomness", "", nil)
 	ErrFailedToGenerateRangeSaturated  = customerror.NewFailedToError("to generate, range saturated", "", nil)
 	ErrFailedToGenerateReachedMaxRetry = customerror.NewFailedToError("to generate, reached max retry", "", nil)
+	ErrInvalidMax                      = customerror.NewInvalidError("params. `max` is less than 0", "", nil)
+	ErrInvalidMin                      = customerror.NewInvalidError("params. `min` is less than 1", "", nil)
 	ErrInvalidMinBiggerThanMax         = customerror.NewInvalidError("param. Min can't be bigger than max", "", nil)
-	ErrInvalidMinOrMaxLessThanZero     = customerror.NewInvalidError("params. `min`/`max` need to be bigger than zero", "", nil)
 )
 
 //////
@@ -42,14 +43,15 @@ type Randomness struct {
 }
 
 func (r *Randomness) Generate() (int64, error) {
-	nBigInt := (r.Max - r.Min + 1)
+	// calculate the max we will be using
+	bg := big.NewInt(int64(r.Max - r.Min + 1))
 
-	bigInt, err := rand.Int(rand.Reader, big.NewInt(int64(nBigInt)))
+	n, err := rand.Int(rand.Reader, bg)
 	if err != nil {
-		log.Panicln(fmt.Errorf("failed to generated random int. %w", err))
+		return 0, customerror.Wrap(ErrFailedToGenerateRandomness, err)
 	}
 
-	port := bigInt.Int64() + 1
+	port := n.Int64() + int64(r.Min)
 
 	if r.memory == nil {
 		return port, nil
@@ -93,16 +95,20 @@ func (r *Randomness) MustGenerate() int64 {
 }
 
 func New(min, max, maxRetry int, collisionFree bool) (*Randomness, error) {
-	if min < 0 || max < 0 {
-		return nil, ErrInvalidMinOrMaxLessThanZero
+	if min < 1 {
+		return nil, ErrInvalidMin
 	}
 
-	if max < min {
-		return nil, ErrInvalidMinBiggerThanMax
+	if max < 0 {
+		return nil, ErrInvalidMax
 	}
 
 	if max == 0 {
 		max = math.MaxInt
+	}
+
+	if max < min {
+		return nil, ErrInvalidMinBiggerThanMax
 	}
 
 	var mR *int
