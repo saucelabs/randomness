@@ -150,3 +150,18 @@ func ExampleNew_mustGenerate() {
 	// output:
 	// false
 }
+
+// Demonstrates how to generate N amount of random numbers.
+func ExampleNew_randomNumbers() {
+	r, err := New(18000, 50000, 100, true)
+	if err != nil {
+		log.Fatalln(err)
+	}
+
+	numbers := r.MustGenerateMany(10)
+
+	fmt.Println(len(numbers) == 10)
+
+	// output:
+	// true
+}

@@ -42,6 +42,7 @@ type Randomness struct {
 	memory   []int64
 }
 
+// Generate returns a random number.
 func (r *Randomness) Generate() (int64, error) {
 	// calculate the max we will be using
 	bg := big.NewInt(int64(r.Max - r.Min + 1))
@@ -94,6 +95,37 @@ func (r *Randomness) MustGenerate() int64 {
 	return n
 }
 
+// GenerateMany returns an slice of `n` numbers.
+func (r *Randomness) GenerateMany(n int) ([]int64, error) {
+	numbers := []int64{}
+
+	for i := 0; i < n; i++ {
+		n, err := r.Generate()
+		if err != nil {
+			return nil, err
+		}
+
+		numbers = append(numbers, n)
+	}
+
+	return numbers, nil
+}
+
+// MustGenerateMany is like `GenerateMany`, but will panic in case of any error.
+func (r *Randomness) MustGenerateMany(n int) []int64 {
+	numbers, err := r.GenerateMany(n)
+	if err != nil {
+		log.Panicln(err)
+	}
+
+	return numbers
+}
+
+//////
+// Factory
+//////
+
+// New is the Randomness factory.
 func New(min, max, maxRetry int, collisionFree bool) (*Randomness, error) {
 	if min < 1 {
 		return nil, ErrInvalidMin
