@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Roadmap
 
+## [0.0.4] - 2021-10-25
+### Changed
+- Using `math.MaxInt32` instead of `math.MaxInt`. `math.MaxInt` is only available in Go 1.17+.
+
 ## [0.0.3] - 2021-10-25
 ### Added
 - Added the ability to generate X amount of random numbers.

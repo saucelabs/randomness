@@ -136,7 +136,8 @@ func New(min, max, maxRetry int, collisionFree bool) (*Randomness, error) {
 	}
 
 	if max == 0 {
-		max = math.MaxInt
+		// TODO: Switch to `math.MaxInt`, only available in Go 1.17+.
+		max = math.MaxInt32
 	}
 
 	if max < min {
