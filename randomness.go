@@ -20,12 +20,12 @@ import (
 var l = sypl.NewDefault("randomgenerator", level.Info)
 
 var (
-	ErrFailedToGenerateRandomness      = customerror.NewFailedToError("to generate randomness", "", nil)
-	ErrFailedToGenerateRangeSaturated  = customerror.NewFailedToError("to generate, range saturated", "", nil)
-	ErrFailedToGenerateReachedMaxRetry = customerror.NewFailedToError("to generate, reached max retry", "", nil)
-	ErrInvalidMax                      = customerror.NewInvalidError("params. `max` is less than 0", "", nil)
-	ErrInvalidMin                      = customerror.NewInvalidError("params. `min` is less than 1", "", nil)
-	ErrInvalidMinBiggerThanMax         = customerror.NewInvalidError("param. Min can't be bigger than max", "", nil)
+	ErrFailedToGenerateRandomness      = customerror.NewFailedToError("to generate randomness")
+	ErrFailedToGenerateRangeSaturated  = customerror.NewFailedToError("to generate, range saturated")
+	ErrFailedToGenerateReachedMaxRetry = customerror.NewFailedToError("to generate, reached max retry")
+	ErrInvalidMax                      = customerror.NewInvalidError("params. `max` is less than 0")
+	ErrInvalidMin                      = customerror.NewInvalidError("params. `min` is less than 1")
+	ErrInvalidMinBiggerThanMax         = customerror.NewInvalidError("param. Min can't be bigger than max")
 )
 
 //////

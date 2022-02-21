@@ -16,8 +16,8 @@ github.com/go-playground/locales v0.14.0 h1:u50s323jtVGugKlcYeyzC0etD1HifMjqmJqb
 github.com/go-playground/locales v0.14.0/go.mod h1:sawfccIbzZTqEDETgFXqTho0QybSa7l++s0DH+LDiLs=
 github.com/go-playground/universal-translator v0.18.0 h1:82dyy6p4OuJq4/CByFNOn/jYrnRPArHwAcmLoJZxyho=
 github.com/go-playground/universal-translator v0.18.0/go.mod h1:UvRDBj+xPUEGrFYl+lu/H90nyDXpg0fqeB/AQUGNTVA=
-github.com/go-playground/validator/v10 v10.9.0 h1:NgTtmN58D0m8+UuxtYmGztBJB7VnPgjj221I1QHci2A=
-github.com/go-playground/validator/v10 v10.9.0/go.mod h1:74x4gJWsvQexRdW8Pn3dXSGrTK4nAUsbPlLADvpJkos=
+github.com/go-playground/validator/v10 v10.10.0 h1:I7mrTYv78z8k8VXa/qJlOlEXn/nBh+BF8dHX5nt/dr0=
+github.com/go-playground/validator/v10 v10.10.0/go.mod h1:74x4gJWsvQexRdW8Pn3dXSGrTK4nAUsbPlLADvpJkos=
 github.com/go-test/deep v1.0.7 h1:/VSMRlnY/JSyqxQUzQLKVMAskpY/NZKFA5j2P+0pP2M=
 github.com/go-test/deep v1.0.7/go.mod h1:QV8Hv/iy04NyLBxAdO9njL0iVPN1S4d/A3NVv1V36o8=
 github.com/google/uuid v1.2.0 h1:qJYtXnJRWmpe7m/3XlyhrsLrEURqHRM2kxzoxXqyUDs=
@@ -42,12 +42,12 @@ github.com/pmezard/go-difflib v1.0.0 h1:4DBwDE0NGyQoBHbLQYPwSUPoCMWR5BEzIk/f1lZb
 github.com/pmezard/go-difflib v1.0.0/go.mod h1:iKH77koFhYxTK1pcRnkKkqfTogsbg7gZNVY4sRDYZ/4=
 github.com/rogpeppe/go-internal v1.6.1/go.mod h1:xXDCJY+GAPziupqXw64V24skbSoqbTEfhy4qGm1nDQc=
 github.com/rogpeppe/go-internal v1.8.0/go.mod h1:WmiCO8CzOY8rg0OYDC4/i/2WRWAB6poM+XZ2dLUbcbE=
-github.com/saucelabs/customerror v0.0.1 h1:MFx1Nlo1mkG0GM7atysYuj/mlU/IKzr+6OPkJd8LkaI=
-github.com/saucelabs/customerror v0.0.1/go.mod h1:2yuCW9Zn8tdbHl1EwRP2waQ0aLXSyc9Ygr5ZDozH9KE=
+github.com/saucelabs/customerror v1.0.3 h1:LfQUuQ9iK6/ExBzRXgLFKx0SLAVmz1s1P2HYXz1JOa8=
+github.com/saucelabs/customerror v1.0.3/go.mod h1:16/zfic7+i7QHOi+i7IQC5/6aL4HYOLocOtjXOM0KXY=
 github.com/saucelabs/lumberjack/v3 v3.0.2 h1:d2xl3L4gtuwhFOnBEWTcTRxZ64wQWyFfUK8cadpe5NA=
 github.com/saucelabs/lumberjack/v3 v3.0.2/go.mod h1:YWvEpPjHrjk7jKET9K4Vphyk6RFlXFD1e/rP60Fr+JA=
-github.com/saucelabs/sypl v1.5.3 h1:6/aN5G8g8hUwUxoHNgZ3FpRW5KjopZvsGVPfLz5j1WQ=
-github.com/saucelabs/sypl v1.5.3/go.mod h1:ubSLpo9I9awtabutiS6Npjof7s/km+HJ/9aOOPClMW0=
+github.com/saucelabs/sypl v1.5.8 h1:i1BHqq/pq/ZNKHB8Xaww83yITjU8EnDfrcBZegDSWBY=
+github.com/saucelabs/sypl v1.5.8/go.mod h1:ubSLpo9I9awtabutiS6Npjof7s/km+HJ/9aOOPClMW0=
 github.com/spf13/afero v1.6.0 h1:xoax2sJ2DT8S8xA2paPFjDCScCNeWsg75VG0DLRreiY=
 github.com/spf13/afero v1.6.0/go.mod h1:Ai8FlHk4v/PARR026UzYexafAt9roJ7LcLMAmO6Z93I=
 github.com/stretchr/objx v0.1.0/go.mod h1:HFkY916IF+rwdDfMAkV7OtwuqBVzrE8GR6GFx+wExME=

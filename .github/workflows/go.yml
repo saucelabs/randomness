@@ -21,10 +21,10 @@ jobs:
       - name: Setup golangci-lint
         uses: golangci/golangci-lint-action@v2.5.2
         with:
-          version: v1.41.1
+          version: v1.43.0
 
       - name: Lint
-        run: /home/runner/golangci-lint-1.41.1-linux-amd64/golangci-lint run -v -c .golangci.yml
+        run: /home/runner/golangci-lint-1.43.0-linux-amd64/golangci-lint run -v -c .golangci.yml
 
       - name: Test
         run: make test coverage

@@ -7,6 +7,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Roadmap
 
+## [0.0.5] - 2022-02-20
+### Changed
+- Upgraded customerror, and Sypl libraries
+
+
 ## [0.0.4] - 2021-10-25
 ### Changed
 - Using `math.MaxInt32` instead of `math.MaxInt`. `math.MaxInt` is only available in Go 1.17+.
@@ -17,7 +22,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [0.0.2] - 2021-10-01
 ### Added
-
 - More tests.
 
 ### Changed

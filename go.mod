@@ -3,8 +3,8 @@ module github.com/saucelabs/randomness
 go 1.17
 
 require (
-	github.com/saucelabs/customerror v0.0.1
-	github.com/saucelabs/sypl v1.5.3
+	github.com/saucelabs/customerror v1.0.3
+	github.com/saucelabs/sypl v1.5.8
 )
 
 require (
@@ -13,7 +13,7 @@ require (
 	github.com/fatih/color v1.12.0 // indirect
 	github.com/go-playground/locales v0.14.0 // indirect
 	github.com/go-playground/universal-translator v0.18.0 // indirect
-	github.com/go-playground/validator/v10 v10.9.0 // indirect
+	github.com/go-playground/validator/v10 v10.10.0 // indirect
 	github.com/google/uuid v1.2.0 // indirect
 	github.com/leodido/go-urn v1.2.1 // indirect
 	github.com/mattn/go-colorable v0.1.8 // indirect
