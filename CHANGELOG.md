@@ -7,6 +7,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Roadmap
 
+## [0.0.6] - 2022-08-08
+### Changed
+- Upgraded customerror, and Sypl libraries
+- Upgraded linter
+
 ## [0.0.5] - 2022-02-20
 ### Changed
 - Upgraded customerror, and Sypl libraries
